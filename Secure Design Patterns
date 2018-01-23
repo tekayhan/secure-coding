@@ -1,0 +1,8 @@
+INTERCEPTOR VALIDATOR PATTERN
+
+PROBLEM: Several well-known attack strategies involve compromising a system by sending requests with invalid data or malicious code. 
+This entails injection of malicious scripts, SQL statements, XML content and invalid data. These attacks can be avoided by validating data 
+before use. Because of the constantly changing attack patterns, the data validation mechanism has to continuously change to prevent against new attacks. Another concern is the freshness of data. An application cannot blindly trust the freshness of data. Are you assured that the data you are using is the cleanest and most accurate? How can you scan and validate data passed in from the client for malicious content in a simple and flexible manner?
+
+SOLUTION: Verify the user input before they are used. Use a pluggable filters approach and apply the filters declaratively based on URL, allowing different requests to be mapped to different filter chains. Restrict filter tasks to pre-processing of requests and providing validation, i.e. a yes or no decision. Apply validation in the server side, because client side validation is insecure and open to spoofing. Renegotiate trust between users from time to time. Keep a record of the volatility of the data.
+
